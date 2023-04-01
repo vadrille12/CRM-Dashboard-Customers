@@ -1,0 +1,119 @@
+.sidebar__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  width: 306px;
+  height: 1200px;
+  padding: 36px 28px 78px;
+  background-color: $sidebar-bg-color;
+  box-shadow: 0px 10px 60px rgba(226, 236, 249, 0.5);
+}
+
+.sidebar__logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  margin-bottom: 64px;
+
+  &-title {
+    font-weight: 600;
+    font-size: 26px;
+    line-height: 39px;
+    letter-spacing: 0.01em;
+    color: $title-color;
+  }
+}
+
+.version {
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 15px;
+  letter-spacing: -0.01em;
+  color: #838383;
+}
+
+.child {
+  display: inline;
+}
+
+.sidebar__nav {
+  &-list {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  &-item {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 11px;
+  }
+
+  &-link {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 21px;
+    letter-spacing: -0.01em;
+    color: $sidebar-text-color;
+  }
+
+  &-arrow {
+    color: $sidebar-text-color;
+  }
+}
+
+.after::after {
+  position: absolute;
+  right: 15px;
+  content: '>';
+}
+
+.sidebar__nav-item:hover,
+.sidebar__nav-item:hover,
+.active-page-link {
+  background-color: $active-color;
+  border-radius: 8px;
+}
+
+.sidebar__nav-item:hover .sidebar__nav-link,
+.sidebar__nav-item:hover .sidebar__nav-link,
+.sidebar__nav-item:hover .sidebar__nav-arrow,
+.active-page-text {
+  color: $active-text-color;
+}
+
+.nav-link-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.profile-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  &__img {
+    display: inline;
+  }
+
+  &__name {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 21px;
+    letter-spacing: 0.01em;
+    color: $title-color;
+  }
+
+  &__profession {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
+    letter-spacing: 0.01em;
+    color: #757575;
+  }
+}
