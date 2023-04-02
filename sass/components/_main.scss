@@ -2,14 +2,42 @@
   display: flex;
 }
 
+.icon-menu {
+  font-size: 22px;
+  display: none;
+
+  @media screen and (max-width: 480px) {
+    display: inline;
+  }
+
+}
+
+.menu-wrapper {
+  @media screen and (min-width: 480px) {
+    width: 200px;
+  }
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 51px;
+}
+
 .customers {
-  width: 100%;
-  height: 1200px;
-  padding: 41px 95px 258px 71px;
+  position: relative;
+  padding: 41px 40px 258px;
   background-color: $primary-bg-color;
+  width: 100%;
+
+  @media screen and (min-width: 1440px) {
+    padding: 41px 95px 258px 71px;
+  }
 
   &__title {
-    margin-bottom: 51px;
+    @media screen and (max-width: 480px) {
+      font-size: 20px;
+    }
+
     font-weight: 500;
     font-size: 24px;
     line-height: 36px;
@@ -22,17 +50,34 @@
     box-shadow: 0px 10px 60px rgba(226, 236, 249, 0.5);
     border-radius: 30px;
 
+    @media screen and (min-width: 200px) and (max-width: 480px) {
+      width: 100%;
+    }
+
+    @media screen and (min-width: 480px) and (max-width: 768px) {
+      width: 352px;
+    }
+
     &-container {
       display: flex;
-      justify-content: space-between;
+      flex-direction: column;
       align-items: center;
-
+      gap: 40px;
       padding: 0 38px 0 40px;
       margin-bottom: 40px;
+
+      @media screen and (min-width: 1440px) {
+        flex-direction: row;
+        justify-content: space-between;
+      }
     }
   }
 
   &__info-title {
+    @media screen and (max-width: 480px) {
+      font-size: 18px;
+    }
+
     font-weight: 600;
     font-size: 22px;
     line-height: 33px;
@@ -41,6 +86,10 @@
   }
 
   &__info-subtitle {
+    @media screen and (max-width: 480px) {
+      font-size: 12px;
+    }
+
     font-weight: 400;
     font-size: 14px;
     line-height: 21px;
@@ -49,6 +98,10 @@
   }
 
   &__search-field {
+    @media screen and (max-width: 480px) {
+      width: 180px;
+    }
+
     width: 216px;
     height: 38px;
     padding: 10px;
@@ -75,38 +128,70 @@
     margin-bottom: 52px;
 
     &-wrapper {
+      max-width: 345px;
+      overflow-x: scroll;
       padding: 0 38px 0 40px;
 
-      &::before {
-        width: 100px;
-        height: 1px;
+      @media screen and (max-width: 1024px) {
+        max-width: 600px;
       }
-    }
 
+      @media screen and (min-width: 1440px) {
+        max-width: 100%;
+      }
+
+    }
   }
 
   &__entries-data-quantity-info {
-    margin-left: 38px;
+
+    @media screen and (max-width: 480px) {
+      font-size: 10px;
+    }
+
     font-weight: 500;
     font-size: 14px;
     line-height: 21px;
     letter-spacing: -0.01em;
     color: $tablehead-text-color;
+
+    @media screen and (min-width: 1440px) {
+      margin-left: 38px;
+    }
   }
 
   &__pagination-wrapper {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    gap: 40px;
+
+    @media screen and (min-width: 1440px) {
+      flex-direction: row;
+      justify-content: space-between;
+    }
   }
 
   &__pagination-section {
     display: flex;
     gap: 12px;
-    margin-right: 40px;
+
+    @media screen and (max-width: 480px) {
+      gap: 6px;
+    }
+
+    @media screen and (min-width: 1440px) {
+      margin-right: 40px;
+    }
   }
 
   &__pagination-button {
+    @media screen and (max-width: 480px) {
+      width: 20px;
+      height: 20px;
+      font-size: 10px;
+    }
+
     width: 26px;
     height: 24px;
     background: #F5F5F5;
@@ -133,9 +218,13 @@
 }
 
 table {
-  width: 100%;
   border-collapse: collapse;
   border-spacing: 0;
+  width: 800px;
+
+  @media screen and (min-width: 1440px) {
+    width: 100%;
+  }
 }
 
 
@@ -148,6 +237,10 @@ th {
 }
 
 td {
+  @media screen and (max-width: 480px) {
+    font-size: 12px;
+  }
+
   font-weight: 500;
   font-size: 14px;
   line-height: 21px;
@@ -156,6 +249,10 @@ td {
 }
 
 th {
+  @media screen and (max-width: 480px) {
+    font-size: 12px;
+  }
+
   padding: 14px 0;
   color: $tablehead-text-color;
   font-weight: 500;

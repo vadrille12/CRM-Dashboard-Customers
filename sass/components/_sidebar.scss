@@ -1,4 +1,30 @@
+.icon-close-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 64px;
+}
+
 .sidebar__container {
+  @media screen and (max-width: 480px) {
+    position: absolute;
+    left: -306px;
+    z-index: 5;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: all 200ms ease-out;
+  }
+
+  &--shown {
+    @media screen and (max-width: 480px) {
+      left: 0;
+      opacity: 1;
+      visibility: visible;
+      pointer-events: all;
+    }
+  }
+
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -15,9 +41,12 @@
   align-items: center;
   gap: 8px;
 
-  margin-bottom: 64px;
 
   &-title {
+    @media screen and (max-width: 480px) {
+      font-size: 22px;
+    }
+
     font-weight: 600;
     font-size: 26px;
     line-height: 39px;
